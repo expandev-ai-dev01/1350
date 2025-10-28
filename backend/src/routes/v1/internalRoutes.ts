@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as questionController from '@/api/v1/internal/question/controller';
 
 /**
  * @summary
@@ -15,12 +16,12 @@ const router = Router();
 
 /**
  * @summary
- * Authenticated routes will be added here as features are implemented
- *
- * @example
- * import orderController from '@/api/v1/internal/order/controller';
- * router.get('/order', authMiddleware, orderController.listHandler);
- * router.post('/order', authMiddleware, orderController.createHandler);
+ * Question management routes
  */
+router.get('/question', questionController.listHandler);
+router.post('/question', questionController.createHandler);
+router.get('/question/:id', questionController.getHandler);
+router.put('/question/:id', questionController.updateHandler);
+router.delete('/question/:id', questionController.deleteHandler);
 
 export default router;

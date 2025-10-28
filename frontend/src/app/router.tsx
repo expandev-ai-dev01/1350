@@ -4,6 +4,7 @@ import { RootLayout } from '@/pages/layouts/RootLayout';
 import { LoadingSpinner } from '@/core/components/LoadingSpinner';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const QuestionsPage = lazy(() => import('@/pages/Questions'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 /**
@@ -27,6 +28,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <HomePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'questions',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <QuestionsPage />
           </Suspense>
         ),
       },
